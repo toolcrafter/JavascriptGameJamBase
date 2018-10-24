@@ -97,7 +97,7 @@ function loadingFinished() {
         // dropShadowDistance: 6,
     });
 
-    message = new PIXI.Text("Hello!", style);
+    message = new PIXI.Text("Click me!", style);
     app.stage.addChild(message);
     message.position.set(54, 96);
 
@@ -121,8 +121,8 @@ function loadingFinished() {
     //     })
     //     .onComplete(function () { coords.x = 0; coords.y = 0; });
 
-    testTween.chain(testTween);
-    testTween.start();
+    // testTween.chain(testTween);
+    // testTween.start();
 
     spaceKey.press = spaceKeyPressed;
 
@@ -161,15 +161,13 @@ function punchObject(spriteObject, time) {
 function addBox() {
     boxSprite = new PIXI.Sprite(PIXI.loader.resources["images/box.jpg"].texture);
     app.stage.addChild(boxSprite);
-    boxSprite.x = 200;
-    boxSprite.y = 200;
+    boxSprite.x = 100;
+    boxSprite.y = 220;
 
     boxSprite.anchor.x = 0.5;
     boxSprite.anchor.y = 0.5;
 
     boxSprite.hitArea = new PIXI.Rectangle(-boxSprite.width * 0.5, -boxSprite.height * 0.5, boxSprite.width, boxSprite.height);
-
-    boxSprite.visible = false;
 }
 
 function gameLoop(delta) {
