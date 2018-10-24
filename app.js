@@ -111,18 +111,15 @@ function loadingFinished() {
     sKey = keyboard(KeyCodes.s);
     dKey = keyboard(KeyCodes.d);
 
-    coords = { x: 0, y: 0 };
-    testTween = new TWEEN.Tween(coords)
-        .to({ x: 700, y: 200 }, 500)
-        .easing(TWEEN.Easing.Elastic.In)
-        .onUpdate(function () {
-            boxSprite.visible = true;
-            boxSprite.position.set(coords.x, coords.y);
-        })
-        // .onComplete(function() {
-        //     testTween.start();
-        // })
-        .onComplete(function () { coords.x = 0; coords.y = 0; });
+    // coords = { x: 0, y: 0 };
+    // testTween = new TWEEN.Tween(coords)
+    //     .to({ x: 700, y: 200 }, 500)
+    //     .easing(TWEEN.Easing.Elastic.In)
+    //     .onUpdate(function () {
+    //         boxSprite.visible = true;
+    //         boxSprite.position.set(coords.x, coords.y);
+    //     })
+    //     .onComplete(function () { coords.x = 0; coords.y = 0; });
 
     testTween.chain(testTween);
     testTween.start();
