@@ -20,8 +20,6 @@ var leftKey, rightKey, upKey, downKey, aKey, wKey, sKey, dKey, spaceKey;
 var testTween;
 var coords;
 
-var hasInteractedOnce = false;
-
 // called once when the application starts
 function applicationStart() {
 
@@ -132,26 +130,12 @@ function loadingFinished() {
     spaceKey.press = spaceKeyPressed;
 
     boxSprite.interactive = true;
-    boxSprite.on('pointerdown', () => { punchObject(boxSprite, 400) });
-
-    // PIXI.sound.add('bird', 'sounds/blip.wav');
-    // PIXI.sound.play('bird');
-
-    // PIXI.sound.Sound.from({
-    //     url: 'sounds/blip.wav',
-    //     autoPlay: true,
-    //     complete: function() {
-    //         console.log('Sound finished');
-    //     }
-    // });
-    var audio = new Audio('sounds/blip.wav');
-
-    app.stage.interactive = true;
-    app.stage.on('pointerdown', () => {
-        hasInteractedOnce = true;
+    boxSprite.on('pointerdown', () => {
+		punchObject(boxSprite, 400);
         audio.play();
-        console.log("play audio");
-    })
+	});
+
+    var audio = new Audio('sounds/blip.wav');
 }
 
 function spaceKeyPressed() {
